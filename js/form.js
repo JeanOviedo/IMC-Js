@@ -5,11 +5,7 @@ boton.addEventListener("click", function (evento) {
 
   let tambla = document.querySelector("#tabla-pacientes");
   let ElForm = document.querySelector("#formulario");
-
-  let nombre = ElForm.nombre.value;
-  let peso = ElForm.peso.value;
-  let altura = ElForm.altura.value;
-  let gordura = ElForm.gordura.value;
+  let paciente = CapturaDataPaciente(ElForm);
 
   console.log(nombre);
 
@@ -22,15 +18,28 @@ boton.addEventListener("click", function (evento) {
 
   console.log(NombrePaciente);
 
-  NombrePaciente.textContent = nombre;
-  AlturaPaciente.textContent = altura;
-  PesoPaciente.textContent = peso;
-  GorduraPaciente.textContent = gordura;
-  console.log(nombre);
+  NombrePaciente.textContent = paciente.nombre;
+  AlturaPaciente.textContent = paciente.altura;
+  PesoPaciente.textContent = paciente.peso;
+  GorduraPaciente.textContent = paciente.gordura;
+  IMCPaciente.textContent = paciente.imc;
+  console.log(paciente.nombre);
 
   ElPaciente.appendChild(NombrePaciente);
   ElPaciente.appendChild(PesoPaciente);
   ElPaciente.appendChild(AlturaPaciente);
   ElPaciente.appendChild(GorduraPaciente);
+  ElPaciente.appendChild(IMCPaciente);
   tambla.appendChild(ElPaciente);
+
+  function CapturaDataPaciente(ElForm) {
+    let donpaciente = {
+      nombre: ElForm.nombre.value,
+      peso: ElForm.peso.value,
+      altura: ElForm.altura.value,
+      gordura: ElForm.gordura.value,
+      imc: CalculaIMC(ElForm.peso.value, ElForm.altura.value),
+    };
+    return donpaciente;
+  }
 });
