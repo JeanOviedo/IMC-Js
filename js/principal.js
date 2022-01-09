@@ -1,9 +1,3 @@
-let boton = document.querySelector("#adicionar-paciente");
-boton.addEventListener("click", function (evento) {
-  evento.preventDefault();
-  console.log("click boton");
-});
-
 var pacientes = document.querySelectorAll(".paciente");
 
 for (var i = 0; i < pacientes.length; i++) {
