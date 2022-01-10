@@ -1,15 +1,15 @@
-var pacientes = document.querySelectorAll(".paciente");
+let pacientes = document.querySelectorAll(".paciente");
 
-for (var i = 0; i < pacientes.length; i++) {
-  var paciente = pacientes[i];
+for (let i = 0; i < pacientes.length; i++) {
+  let paciente = pacientes[i];
 
-  var tdPeso = paciente.querySelector(".info-peso");
-  var peso = tdPeso.textContent;
+  let tdPeso = paciente.querySelector(".info-peso");
+  let peso = tdPeso.textContent;
 
-  var tdAltura = paciente.querySelector(".info-altura");
-  var altura = tdAltura.textContent;
+  let tdAltura = paciente.querySelector(".info-altura");
+  let altura = tdAltura.textContent;
 
-  var tdIMC = paciente.querySelector(".info-imc");
+  let tdIMC = paciente.querySelector(".info-imc");
 
   pesoEsValido = true;
   alturaEsValida = true;
@@ -34,6 +34,6 @@ for (var i = 0; i < pacientes.length; i++) {
 }
 
 function CalculaIMC(peso, altura) {
-  var imc = peso / (altura * altura);
+  let imc = peso / (altura * altura);
   return imc.toFixed(2);
 }
